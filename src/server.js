@@ -1,9 +1,14 @@
+import dotenv from "dotenv";
 import express from "express";
+import database from "./config/database";
+import Routes from "./Routes";
+dotenv.config();
 
 const app = express();
-const PORT = 5001;
+const { PORT } = process.env;
 
-app.get("/", (req, res) => res.send("Será vai!!!"));
+app.use(express.json());
+app.use("/", Routes);
 
 app.listen(PORT, () => {
   console.log(`Servidor de pé em: http://localhost:${PORT}`);
