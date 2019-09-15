@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/CollabCodeTech/events#readme",
   "dependencies": {
+    "dotenv": "^8.1.0",
     "mongoose": "^5.7.1",
     "nodemon": "^1.19.2",
     "sucrase": "^3.10.1"
