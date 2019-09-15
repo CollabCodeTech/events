@@ -3,16 +3,16 @@ import mongoose from "mongoose";
 
 dotenv.config();
 const {
+  DB_PROTOCOL,
   DB_USER,
   DB_PASSWORD,
   DB_HOST,
-  DB_PORT,
   DB_NAME,
   DB_QUERYSTRING
 } = process.env;
 
 mongoose.connect(
-  `mongodb://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}${DB_QUERYSTRING}`,
+  `${DB_PROTOCOL}://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}${DB_QUERYSTRING}`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
